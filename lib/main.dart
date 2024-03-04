@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'screens/input_file.dart';
 
-void main() => runApp(BMICalculator());
+void main() => runApp(const BMICalculator());
 
 class BMICalculator extends StatelessWidget {
-  MaterialColor mycolor = MaterialColor(
+  final MaterialColor mycolor = const MaterialColor(
     0xFF0A0E21,
     <int, Color>{
       50: Color(0xFF0A0E21),
@@ -20,17 +20,16 @@ class BMICalculator extends StatelessWidget {
     },
   );
 
+  const BMICalculator({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
-        scaffoldBackgroundColor: mycolor,
-          colorScheme: ColorScheme.fromSwatch(
-              primarySwatch: mycolor, accentColor: Colors.tealAccent.shade200)
-      ),
-      home: InputPage(),
+          scaffoldBackgroundColor: mycolor,
+          colorScheme: ColorScheme.fromSwatch(primarySwatch: mycolor, accentColor: Colors.tealAccent.shade200)),
+      home: const InputPage(),
     );
   }
 }
-

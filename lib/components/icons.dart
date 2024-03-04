@@ -2,7 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:bmi/constants.dart';
 
 class ResuableColumn extends StatelessWidget {
-  ResuableColumn({required this.icon, required this.text, });
+  const ResuableColumn({
+    super.key,
+    required this.icon,
+    required this.text,
+  });
 
   final IconData icon;
   final String text;
@@ -16,16 +20,14 @@ class ResuableColumn extends StatelessWidget {
           icon,
           size: 80.0,
         ),
-        SizedBox(
+        const SizedBox(
           height: 15.0,
         ),
         Text(
           text,
           style: kLabelTextStyle,
         ),
-
       ],
     );
   }
 }
-

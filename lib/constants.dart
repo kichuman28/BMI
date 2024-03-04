@@ -1,12 +1,12 @@
+// ignore_for_file: unused_import
+
 import 'components/icons.dart';
 import 'package:flutter/material.dart';
-
 
 const kLabelTextStyle = TextStyle(
   fontSize: 18.0,
   color: Color(0xFF8D8E98),
 );
-
 
 const kNumberTextStyle = TextStyle(
   fontSize: 50.0,
@@ -22,7 +22,6 @@ const kCalculateButtonStyle = TextStyle(
   fontSize: 25.0,
   fontWeight: FontWeight.bold,
 );
-
 
 const kResultStyle = TextStyle(
   fontSize: 50.0,
@@ -43,4 +42,3 @@ const kBMITextStyle = TextStyle(
 const kBodyTextStyle = TextStyle(
   fontSize: 22.0,
 );
-

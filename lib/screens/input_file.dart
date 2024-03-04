@@ -2,9 +2,8 @@ import 'package:bmi/screens//results_page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:bmi/components/icons.dart';
-import 'package:bmi/components/reusable card.dart';
+import 'package:bmi/components/reusable_card.dart';
 import '../constants.dart';
-import 'package:bmi/screens//results_page.dart';
 import '../components/bottom_button.dart';
 import 'package:bmi/components/round_icon.dart';
 import 'package:bmi/calculator_brain.dart';
@@ -15,8 +14,10 @@ enum GenderType {
 }
 
 class InputPage extends StatefulWidget {
+  const InputPage({super.key});
+
   @override
-  _InputPageState createState() => _InputPageState();
+  State<InputPage> createState() => _InputPageState();
 }
 
 class _InputPageState extends State<InputPage> {
@@ -29,7 +30,7 @@ class _InputPageState extends State<InputPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: Text('BMI CALCULATOR')),
+        title: const Center(child: Text('BMI CALCULATOR')),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -44,10 +45,8 @@ class _InputPageState extends State<InputPage> {
                         selectedGender = GenderType.male;
                       });
                     },
-                    colour: selectedGender == GenderType.male
-                        ? kActiveColour
-                        : kInactiveColour,
-                    cardChild: ResuableColumn(
+                    colour: selectedGender == GenderType.male ? kActiveColour : kInactiveColour,
+                    cardChild: const ResuableColumn(
                       icon: FontAwesomeIcons.mars,
                       text: 'MALE',
                     ),
@@ -60,10 +59,8 @@ class _InputPageState extends State<InputPage> {
                         selectedGender = GenderType.female;
                       });
                     },
-                    colour: selectedGender == GenderType.female
-                        ? kActiveColour
-                        : kInactiveColour,
-                    cardChild: ResuableColumn(
+                    colour: selectedGender == GenderType.female ? kActiveColour : kInactiveColour,
+                    cardChild: const ResuableColumn(
                       icon: FontAwesomeIcons.venus,
                       text: 'FEMALE',
                     ),
@@ -79,7 +76,7 @@ class _InputPageState extends State<InputPage> {
               cardChild: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
+                  const Text(
                     'HEIGHT',
                     style: kLabelTextStyle,
                   ),
@@ -92,7 +89,7 @@ class _InputPageState extends State<InputPage> {
                         height.toString(),
                         style: kNumberTextStyle,
                       ),
-                      Text(
+                      const Text(
                         'cm',
                         style: kLabelTextStyle,
                       ),
@@ -100,14 +97,12 @@ class _InputPageState extends State<InputPage> {
                   ),
                   SliderTheme(
                     data: SliderTheme.of(context).copyWith(
-                      inactiveTrackColor: Color(0xFF8D8E98),
+                      inactiveTrackColor: const Color(0xFF8D8E98),
                       activeTrackColor: Colors.white,
-                      thumbColor: Color(0xFFEB1555),
-                      overlayColor: Color(0x29EB1555),
-                      thumbShape:
-                          RoundSliderThumbShape(enabledThumbRadius: 15.0),
-                      overlayShape:
-                          RoundSliderOverlayShape(overlayRadius: 30.0),
+                      thumbColor: const Color(0xFFEB1555),
+                      overlayColor: const Color(0x29EB1555),
+                      thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 15.0),
+                      overlayShape: const RoundSliderOverlayShape(overlayRadius: 30.0),
                     ),
                     child: Slider(
                         value: height.toDouble(),
@@ -132,7 +127,7 @@ class _InputPageState extends State<InputPage> {
                     cardChild: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text(
+                        const Text(
                           'WEIGHT',
                           style: kLabelTextStyle,
                         ),
@@ -151,7 +146,7 @@ class _InputPageState extends State<InputPage> {
                                 });
                               },
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 10.0,
                             ),
                             RoundIconButton(
@@ -175,7 +170,7 @@ class _InputPageState extends State<InputPage> {
                     cardChild: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text(
+                        const Text(
                           'AGE',
                           style: kLabelTextStyle,
                         ),
@@ -194,7 +189,7 @@ class _InputPageState extends State<InputPage> {
                                 });
                               },
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 10.0,
                             ),
                             RoundIconButton(
@@ -236,5 +231,3 @@ class _InputPageState extends State<InputPage> {
     );
   }
 }
-
-
